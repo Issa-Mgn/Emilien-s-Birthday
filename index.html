@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emilien's Birthday</title>
+    <link rel="stylesheet" href="./style.css">
+    <!-- Ajout de Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="container"> 
+        <img src="./Img/IMG_20240913_135221_261.jpg" alt="Eml">   
+        <h3>Emilien's Birthday</h3>
+        <p>Joyeux anniversaire à toi, Emilien 🥳! Que cette journée spéciale soit à l’image de ton prénom 🙂: pleine d’Energie 🌚, de Motivation📈 pour aller loin, d’Intelligence 😌 pour faire les bons choix, de Loyauté 🫠 envers ceux que tu aimes, d’Inspiration💻 pour rêver grand, d’Equilibre 🔮 pour rester serein, et de Noblesse 🤌dans tout ce que tu entreprends. Nous te souhaitons (Gloria et moi) la santé 😉, le bonheur 😁, la prospérité 🌝 , la réussite 📈, l'argent 💶 en abondance (oui, faut pas oublier 😄), et surtout beaucoup d’amour  et de paix intérieure 🫠. Passe une journée exceptionnelle, tu le mérites largement ! 🎉🎁🔥
+        <br>On t’aime fort 💪 ❤.</p>
+        <button class="btn" type="submit"><a href="#">Appuyez ici</a></button>
+    </div>
+    <footer id="footer">
+        <p>© 2025 Emilien's Birthday. Tous les droits réservés !</p>
+    </footer>
+
+    <!-- Loader -->
+    <div id="loader" class="hidden">
+        <div class="spinner center">
+            <div class="spinner-blade"></div>
+            <div class="spinner-blade"></div>
+            <div class="spinner-blade"></div>
+            <div class="spinner-blade"></div>
+            <div class="spinner-blade"></div>
+            <div class="spinner-blade"></div>
+            <div class="spinner-blade"></div>
+            <div class="spinner-blade"></div>
+            <div class="spinner-blade"></div>
+            <div class="spinner-blade"></div>
+            <div class="spinner-blade"></div>
+            <div class="spinner-blade"></div>
+        </div>
+        <p class="loading-text">Chargement...</p>
+    </div>
+
+    <!-- Enveloppe -->
+    <div id="envelope-step" class="hidden">
+        <div id="envelope-container">
+            <i id="envelope" class="fa-solid fa-envelope-open"></i>
+        </div>
+        <p id="envelope-message">Appuie sur l'enveloppe !</p>
+    </div>
+
+    <!-- Gâteau -->
+    <div id="cake-step" class="hidden">
+        <div id="cake-container">
+            <div id="cake" style="display: flex; flex-direction: column; align-items: center;">
+                <i class="fa-solid fa-cake-candles" style="font-size: 120px; color: #06050b; margin-bottom: 20px;"></i>
+            </div>
+        </div>
+        <p id="cake-message">Souffle sur les bougies !</p>
+    </div>
+
+    <!-- Message final -->
+    <div id="birthday-message" class="hidden">
+        <h2>Happy Birthday Emilien <i class="fa-solid fa-cake-candles"></i></h2>
+        <div id="sparks"></div>
+    </div>
+
+    <script>
+    // Bouton principal
+    document.querySelector('.btn').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector('.container').classList.add('hidden');
+        document.getElementById('loader').classList.remove('hidden');
+        setTimeout(() => {
+            document.getElementById('loader').classList.add('hidden');
+            document.getElementById('envelope-step').classList.remove('hidden');
+            document.getElementById('envelope-step').classList.add('active');
+            document.getElementById('footer').style.display = "none";
+        }, 2000);
+    });
+
+    // Animation enveloppe
+    document.getElementById('envelope').addEventListener('click', function() {
+        document.getElementById('envelope-step').classList.add('hidden');
+        document.getElementById('cake-step').classList.remove('hidden');
+        document.getElementById('cake-message').style.display = 'block';
+        setTimeout(() => {
+            document.getElementById('cake-step').classList.add('hidden');
+            document.getElementById('birthday-message').classList.remove('hidden');
+            launchSparks(); // Ajoute ceci ici
+        }, 5000);
+    });
+
+    function launchSparks() {
+        const sparks = document.getElementById('sparks');
+        const colors = ['#FFD700', '#FF6347', '#00E6F6', '#FF69B4', '#7CFC00', '#FF8C00', '#fff', '#00ffea'];
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        for (let i = 0; i < 10; i++) { // 10 étincelles à chaque "vague"
+            const spark = document.createElement('div');
+            spark.className = 'spark';
+            spark.style.left = (Math.random() * width * 0.8 + width * 0.1) + 'px';
+            spark.style.top = (Math.random() * height * 0.3 + height * 0.5) + 'px';
+            spark.style.background = colors[Math.floor(Math.random() * colors.length)];
+            spark.style.animationDelay = (Math.random() * 0.7) + 's';
+            sparks.appendChild(spark);
+            // Supprimer l'étincelle du DOM après l'animation pour éviter l'accumulation
+            setTimeout(() => spark.remove(), 1500);
+        }
+        // Relance la fonction très rapidement pour un effet continu
+        setTimeout(launchSparks, 200);
+    }
+    </script>
+</body>
+</html>

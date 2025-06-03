@@ -1,0 +1,504 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #6dd5ed, #2193b0); /* Bleu clair vers bleu foncé */
+    color: #22223b;
+    margin: 0;
+    padding: 20px;
+}
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background-color: #22223b;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.container img {
+    display: block;
+    margin: 0 auto 20px auto;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;      /* Remplit le cercle sans déformer */
+    object-position: center;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+h3 {
+    text-align: center;
+    color: #f2e9e4;
+}
+p {
+    font-size: 16px;
+    color: #f2e9e4;
+}
+.container p span {
+    color: #f2e9e4;
+    font-weight: bold;
+}
+.btn {
+    display: block;
+    width: auto;
+    padding: 10px;
+    background: linear-gradient(to right, #43cea2, #185a9d); /* Vert d'eau vers bleu foncé */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.btn:hover {
+    background: linear-gradient(to right, #185a9d, #43cea2);
+}
+.btn a {
+    color: #fff;
+    text-decoration: none;
+}
+footer {
+    margin-top: 20px;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Loader */
+#loader {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to right, #6dd5ed, #2193b0);
+  opacity: 0.9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.spinner {
+    font-size: 28px;
+    position: relative;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+  }
+  
+  .spinner.center {
+    margin: 0 auto;
+    color: black;
+    margin-bottom: 40px;
+  }
+  
+  .spinner .spinner-blade {
+    position: absolute;
+    left: 0.4629em;
+    bottom: 0;
+    width: 0.074em;
+    height: 0.2777em;
+    border-radius: 0.0555em;
+    background-color: transparent;
+    -webkit-transform-origin: center -0.2222em;
+    -ms-transform-origin: center -0.2222em;
+    transform-origin: center -0.2222em;
+    animation: spinner-fade9234 1s infinite linear;
+  }
+  
+  .spinner .spinner-blade:nth-child(1) {
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  
+  .spinner .spinner-blade:nth-child(2) {
+    -webkit-animation-delay: 0.083s;
+    animation-delay: 0.083s;
+    -webkit-transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+    transform: rotate(30deg);
+  }
+  
+  .spinner .spinner-blade:nth-child(3) {
+    -webkit-animation-delay: 0.166s;
+    animation-delay: 0.166s;
+    -webkit-transform: rotate(60deg);
+    -ms-transform: rotate(60deg);
+    transform: rotate(60deg);
+  }
+  
+  .spinner .spinner-blade:nth-child(4) {
+    -webkit-animation-delay: 0.249s;
+    animation-delay: 0.249s;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+  
+  .spinner .spinner-blade:nth-child(5) {
+    -webkit-animation-delay: 0.332s;
+    animation-delay: 0.332s;
+    -webkit-transform: rotate(120deg);
+    -ms-transform: rotate(120deg);
+    transform: rotate(120deg);
+  }
+  
+  .spinner .spinner-blade:nth-child(6) {
+    -webkit-animation-delay: 0.415s;
+    animation-delay: 0.415s;
+    -webkit-transform: rotate(150deg);
+    -ms-transform: rotate(150deg);
+    transform: rotate(150deg);
+  }
+  
+  .spinner .spinner-blade:nth-child(7) {
+    -webkit-animation-delay: 0.498s;
+    animation-delay: 0.498s;
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  
+  .spinner .spinner-blade:nth-child(8) {
+    -webkit-animation-delay: 0.581s;
+    animation-delay: 0.581s;
+    -webkit-transform: rotate(210deg);
+    -ms-transform: rotate(210deg);
+    transform: rotate(210deg);
+  }
+  
+  .spinner .spinner-blade:nth-child(9) {
+    -webkit-animation-delay: 0.664s;
+    animation-delay: 0.664s;
+    -webkit-transform: rotate(240deg);
+    -ms-transform: rotate(240deg);
+    transform: rotate(240deg);
+  }
+  
+  .spinner .spinner-blade:nth-child(10) {
+    -webkit-animation-delay: 0.747s;
+    animation-delay: 0.747s;
+    -webkit-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg);
+  }
+  
+  .spinner .spinner-blade:nth-child(11) {
+    -webkit-animation-delay: 0.83s;
+    animation-delay: 0.83s;
+    -webkit-transform: rotate(300deg);
+    -ms-transform: rotate(300deg);
+    transform: rotate(300deg);
+  }
+  
+  .spinner .spinner-blade:nth-child(12) {
+    -webkit-animation-delay: 0.913s;
+    animation-delay: 0.913s;
+    -webkit-transform: rotate(330deg);
+    -ms-transform: rotate(330deg);
+    transform: rotate(330deg);
+  }
+  
+  @keyframes spinner-fade9234 {
+    0% {
+      background-color: #01050c;
+    }
+  
+    100% {
+      background-color: transparent;
+    }
+  }
+.loading-text {
+  margin-top: 0px;
+  text-align: center;
+  font-size: 1.2em;
+  color: black;
+}
+
+
+/* Envelope */
+#envelope-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+}
+#envelope-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+#envelope {
+  font-size: 180px;
+  color: #2193b0;
+  animation: swing 1s infinite alternate;
+  cursor: pointer;
+}
+@keyframes swing {
+  0% { transform: rotate(-20deg);}
+  100% { transform: rotate(20deg);}
+}
+#envelope-message {
+  text-align: center;
+  font-size: 1.5em;
+  margin-top: 30px;
+  font-weight: bold;
+  color: #00080a;
+}
+
+/* Masquer le footer lors de l'étape enveloppe */
+#envelope-step.active ~ #footer,
+#envelope-step:not(.hidden) ~ #footer {
+  display: none !important;
+}
+
+/* Cake */
+#cake-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+}
+#cake-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 320px;
+}
+#cake {
+  position: relative;
+  width: 180px;
+  height: 180px;
+}
+.cake-body {
+  width: 160px;
+  height: 90px;
+  background: linear-gradient(to bottom, #070707 80%, #0c0c0c 100%);
+  border-radius: 0 0 80px 80px;
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  box-shadow: 0 8px 20px #888;
+  border: 3px solid #070201;
+}
+.cake-body::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -18px;
+  left: 0;
+  width: 160px;
+  height: 30px;
+  background: repeating-linear-gradient(
+    135deg,
+    #000407 0 10px,
+    #040404 10px 20px
+  );
+  border-radius: 80px 80px 40px 40px/40px 40px 20px 20px;
+  z-index: 2;
+}
+#candles {
+  display: none !important;
+}
+.candle {
+  width: 6px;
+  height: 38px;
+  background: repeating-linear-gradient(
+    90deg,
+    #fff 0 3px,
+    #e07a5f 3px 6px
+  );
+  border-radius: 3px;
+  position: relative;
+  box-shadow: 0 0 2px #e07a5f;
+}
+.flame {
+  width: 12px;
+  height: 18px;
+  background: radial-gradient(ellipse at center, #ffd700 60%, #ff9900 100%);
+  border-radius: 50% 50% 50% 50%/60% 60% 40% 40%;
+  position: absolute;
+  top: -20px;
+  left: -3px;
+  opacity: 1;
+  transition: opacity 0.5s;
+  box-shadow: 0 0 8px 2px #ffd700;
+}
+#cake-message {
+  text-align: center;
+  font-size: 1.5em;
+  margin-top: 50px; /* plus d'espace */
+  font-weight: bold;
+  color: #010f13;
+  display: block;
+}
+
+/* Message final */
+#birthday-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw;
+  font-size: 2em;
+  color: #01080a;
+  text-align: center;
+  position: fixed;
+  top: 0; left: 0;
+  background: linear-gradient(to right, #6dd5ed, #2193b0);
+  z-index: 2000;
+}
+
+@media (max-width: 600px) {
+  #birthday-message {
+    font-size: 1.3em;
+    min-height: 100vh;
+    width: 100vw;
+    padding: 0 10px;
+  }
+  .container img {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+/* Utilitaires */
+.hidden { display: none !important; }
+/* ----------- RESPONSIVE DESIGN ----------- */
+@media (max-width: 900px) {
+  .container {
+    max-width: 90vw;
+    padding: 10px;
+  }
+  #cake, #cake-container {
+    width: 120px !important;
+    height: 120px !important;
+  }
+  #envelope {
+    font-size: 120px;
+  }
+}
+
+@media (max-width: 600px) {
+  body, html {
+    height: 100%;
+    min-height: 100vh;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0;
+  }
+  .container {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    max-width: 98vw;
+    padding: 5vw 2vw;
+    border-radius: 4vw;
+    box-sizing: border-box;
+  }
+  .container img {
+    width: 70px;
+    height: 70px;
+  }
+  h3 {
+    font-size: 1.2em;
+  }
+  p, #cake-message, #envelope-message, .loading-text {
+    font-size: 1em !important;
+  }
+  #envelope {
+    font-size: 140px;
+  }
+  #cake, #cake-container {
+    width: 70px !important;
+    height: 70px !important;
+  }
+  #birthday-message {
+    font-size: 1.2em;
+    height: 180px;
+  }
+  #loader {
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+  }
+  .spinner.center {
+    margin-bottom: 0;
+  }
+  .loading-text {
+    margin-top: 40px;
+    font-size: 1em;
+  }
+  .btn {
+    font-size: 1em;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+    padding: 2vw 1vw;
+  }
+  #envelope {
+    font-size: 90px;
+  }
+  #cake, #cake-container {
+    width: 50px !important;
+    height: 50px !important;
+  }
+  #birthday-message {
+    font-size: 1em;
+    height: 120px;
+  }
+}
+
+#sparks {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+.spark {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  opacity: 0.8;
+  pointer-events: none;
+  animation: spark-fly 1.2s linear forwards;
+}
+@keyframes spark-fly {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  80% {
+    opacity: 1;
+    transform: scale(1.2) translateY(-120px);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.8) translateY(-180px);
+  }
+}
